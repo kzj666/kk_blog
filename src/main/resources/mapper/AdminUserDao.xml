@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kk.dao.AdminUserDao">
+
+    <resultMap type="com.kk.entity.AdminUser" id="AdminUserMap">
+        <result property="userId" column="user_id" jdbcType="INTEGER"/>
+        <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+        <result property="userPassword" column="user_password" jdbcType="VARCHAR"/>
+        <result property="version" column="version" jdbcType="INTEGER"/>
+        <result property="userNickname" column="user_nickname" jdbcType="VARCHAR"/>
+        <result property="idDeleted" column="id_deleted" jdbcType="INTEGER"/>
+        <result property="gmtCreate" column="gmt_create" jdbcType="TIMESTAMP"/>
+        <result property="gmtUpdate" column="gmt_update" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AdminUserMap">
+        select
+          user_id, user_name, user_password, version, user_nickname, id_deleted, gmt_create, gmt_update
+        from kk_blog.admin_user
+        where user_id = #{userId}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AdminUserMap">
+        select
+          user_id, user_name, user_password, version, user_nickname, id_deleted, gmt_create, gmt_update
+        from kk_blog.admin_user
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="AdminUserMap">
+        select
+          user_id, user_name, user_password, version, user_nickname, id_deleted, gmt_create, gmt_update
+        from kk_blog.admin_user
+        <where>
+            <if test="userId != null">
+                and user_id = #{userId}
+            </if>
+            <if test="userName != null and userName != ''">
+                and user_name = #{userName}
+            </if>
+            <if test="userPassword != null and userPassword != ''">
+                and user_password = #{userPassword}
+            </if>
+            <if test="version != null">
+                and version = #{version}
+            </if>
+            <if test="userNickname != null and userNickname != ''">
+                and user_nickname = #{userNickname}
+            </if>
+            <if test="idDeleted != null">
+                and id_deleted = #{idDeleted}
+            </if>
+            <if test="gmtCreate != null">
+                and gmt_create = #{gmtCreate}
+            </if>
+            <if test="gmtUpdate != null">
+                and gmt_update = #{gmtUpdate}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="userId" useGeneratedKeys="true">
+        insert into kk_blog.admin_user(user_name, user_password, version, user_nickname, id_deleted, gmt_create, gmt_update)
+        values (#{userName}, #{userPassword}, #{version}, #{userNickname}, #{idDeleted}, #{gmtCreate}, #{gmtUpdate})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update kk_blog.admin_user
+        <set>
+            <if test="userName != null and userName != ''">
+                user_name = #{userName},
+            </if>
+            <if test="userPassword != null and userPassword != ''">
+                user_password = #{userPassword},
+            </if>
+            <if test="version != null">
+                version = #{version},
+            </if>
+            <if test="userNickname != null and userNickname != ''">
+                user_nickname = #{userNickname},
+            </if>
+            <if test="idDeleted != null">
+                id_deleted = #{idDeleted},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate},
+            </if>
+            <if test="gmtUpdate != null">
+                gmt_update = #{gmtUpdate},
+            </if>
+        </set>
+        where user_id = #{userId}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from kk_blog.admin_user where user_id = #{userId}
+    </delete>
+
+</mapper>

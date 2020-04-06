@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <!-- meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="keywords" content=""/>
+    <link th:href="@{/blog/css/font-awesome.min.css}" rel="stylesheet" type="text/css" media="all"/>
+    <link th:href="@{/blog/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all"/>
+    <link th:href="@{/blog/css/style.css}" rel="stylesheet" type="text/css" media="all"/>
+    <script type="application/x-javascript"> addEventListener("load", function () {
+        setTimeout(hideURLbar, 0);
+    }, false);
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    } </script>
+    <!--fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext"
+          rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
+          rel="stylesheet">
+    <!--//fonts-->
+    <script type="text/javascript" th:src="@{/blog/js/jquery-2.1.4.min.js}"></script>
+    <script th:src="@{/blog/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" type="text/css" th:href="@{/blog/css/component.css}"/>
+    <script th:src="@{/blog/js/modernizr.custom.js}"></script>
+    <link rel="stylesheet" th:href="@{/blog/css/colorbox.css}"/>
+</head>
+<body>
+<div class="w3-slider">
+    <div id="boxgallery" class="boxgallery" data-effect="effect-1">
+        <div class="panel"><img th:src="@{/blog/images/2.jpg}" alt="Image 2"/></div>
+        <div class="panel"><img th:src="@{/blog/images/3.jpg}" alt="Image 3"/></div>
+        <div class="panel"><img th:src="@{/blog/images/4.jpg}" alt="Image 4"/></div>
+    </div>
+    <div class="w3layouts-header-title">
+        <h2>Never Say Giveup  , Like a fighter</h2>
+    </div>
+</div>
+<script th:src="@{/blog/js/classie.js}"></script>
+<script th:src="@{/blog/js/boxesFx.js}"></script>
+<script>
+    new BoxesFx(document.getElementById('boxgallery'));
+</script>
+
+<header>
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <div class="w3-logo">
+                    <h1><a href="#">KK_BLOG</a></h1>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a class="active" href="index.html">主页</a></li>
+                    <li><a class="scroll" href="#agileinfo-news">最新文章</a></li>
+                    <li><a class="scroll" href="#wthree-gallery">待定</a></li>
+                    <li><a href="/admin/index">文章管理</a></li>
+                    <li><a class="scroll" href="#w3-agile-about">关于我</a></li>
+                    <li><a class="scroll" href="#w3-contact">留 言</a></li>
+                    <li><a href="https://github.com/kzj666" target="_blank">开发文档</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="clearfix"></div>
+    </div>
+</header>
+
+
+<div class="news-section" id="agileinfo-news">
+    <div class="container">
+        <div class="agileits-news-section-head text-center">
+            <h3 class="agileits_head">Latest Articles</h3>
+            <span class="w3-line"></span>
+        </div>
+        <div class="news-section-grids">
+            <div class="col-md-4 w3ls-news-section-grid">
+                <img th:src="@{/blog/images/n1.jpg}" alt=""/>
+                <div class="info">
+                    <h5>News post title1</h5>
+                    <label>september 12</label>
+                    <p>Lorem</p>
+                    <a class="more" href="#" data-toggle="modal" data-target="#myModal">Read more</a>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        News post title1</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w3ls-news-section-grid">
+                <img th:src="@{/blog/images/n2.jpg}" alt=""/>
+                <div class="info">
+                    <h5>News post title2</h5>
+                    <label>October 25</label>
+                    <p>Lorem </p>
+                    <a class="more" href="#" data-toggle="modal" data-target="#myModal1">Read more</a>
+                    <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        News post title2</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w3ls-news-section-grid">
+                <img th:src="@{/blog/images/n3.jpg}" alt=""/>
+                <div class="info">
+                    <h5>News post title3</h5>
+                    <label>october 30</label>
+                    <p>Lorem</p>
+                    <a class="more" href="#" data-toggle="modal" data-target="#myModal2">Read more</a>
+                    <div class="modal fade" id="myModal2" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        News post title3</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="gallery text-center" id="wthree-gallery" style="background: #ffffff">
+    <div class="container">
+        <h3 class="agileits_head" style="color: #272727">Gallery</h3>
+        <span class="w3-line"></span>
+        <div class="w3l_gallery_grids">
+            <div class="bs-example bs-example-tabs wthree_example_tab" role="tabpanel" data-example-id="togglable-tabs">
+                <div class="w3l_gallery_grids1">
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g1.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g1.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g2.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g2.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g3.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g3.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g4.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g4.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g5.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g5.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g6.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g6.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g7.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g7.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g8.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g8.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 w3l_gallery_grid">
+                        <div class="agileinfo_gallery_grid">
+                            <a class="group1" th:href="@{/blog/images/g9.jpg}" title="Road trip">
+                                <div class="hovereffect">
+                                    <img th:src="@{/blog/images/g9.jpg}" alt=" " class="img-responsive"/>
+                                    <div class="overlay">
+                                        <p class="info">Road trip</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/blog/js/jquery.colorbox.js}"></script>
+<script>
+    $(document).ready(function () {
+        //Examples of how to assign the Colorbox event to elements
+        $(".group1").colorbox({rel: 'group1'});
+        $(".group2").colorbox({rel: 'group2', transition: "fade"});
+        $(".group3").colorbox({rel: 'group3', transition: "none", width: "75%", height: "75%"});
+        $(".group4").colorbox({rel: 'group4', slideshow: true});
+        $(".ajax").colorbox();
+        $(".youtube").colorbox({iframe: true, innerWidth: 640, innerHeight: 390});
+        $(".vimeo").colorbox({iframe: true, innerWidth: 500, innerHeight: 409});
+        $(".iframe").colorbox({iframe: true, width: "80%", height: "80%"});
+        $(".inline").colorbox({inline: true, width: "50%"});
+        $(".callbacks").colorbox({
+            onOpen: function () {
+                alert('onOpen: colorbox is about to open');
+            },
+            onLoad: function () {
+                alert('onLoad: colorbox has started to load the targeted content');
+            },
+            onComplete: function () {
+                alert('onComplete: colorbox has displayed the loaded content');
+            },
+            onCleanup: function () {
+                alert('onCleanup: colorbox has begun the close process');
+            },
+            onClosed: function () {
+                alert('onClosed: colorbox has completely closed');
+            }
+        });
+
+        $('.non-retina').colorbox({rel: 'group5', transition: 'none'})
+        $('.retina').colorbox({rel: 'group5', transition: 'none', retinaImage: true, retinaUrl: true});
+
+        //Example of preserving a JavaScript event for inline calls.
+        $("#click").click(function () {
+            $('#click').css({
+                "background-color": "#f00",
+                "color": "#fff",
+                "cursor": "inherit"
+            }).text("Open this window again and this message will still be here.");
+            return false;
+        });
+    });
+</script>
+
+
+
+
+
+<!-- about-section -->
+<div class="w3-agileits-about-section" id="w3-agile-about">
+    <div class="container">
+        <div class="w3agile-about-section-head text-center">
+            <h3>About Me</h3>
+            <span></span>
+        </div>
+        <div class="about-section-grids">
+            <div class="col-md-4 wthree-about-section-grid">
+                <img th:src="@{/blog/images/abt_pic.jpg}" alt=""/>
+            </div>
+            <div class="col-md-4 wthree-about-section-grid">
+                <h5>博客介绍</h5>
+                <p>11111111111</p>
+                <p>22222222222</p>
+            </div>
+            <div class="col-md-4 wthree-about-section-grid">
+                <h5>技术栈</h5>
+                <p>Springboot</p>
+                <p>MyBatisPlus</p>
+                <p>Layui</p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="contact-section" id="w3-contact">
+    <div class="container">
+        <div class="contact-section-head text-center">
+            <h3>Contact Me</h3>
+            <span></span>
+        </div>
+        <!--<div class="agileits-map">-->
+            <!--<iframe src="" allowfullscreen></iframe>-->
+        <!--</div>-->
+        <div class="w3l-contact-form-bottom">
+            <div class="col-md-4 w3ls-address">
+                <address>
+                    <strong>Address :</strong>
+                    <p>Kzj Company</p>
+                    <p>天河区</p>
+                    <p class="bottom">GuangZhou,CHINA</p>
+                    <strong>Email :</strong>
+                    <p>2319680237@qq.com</p>
+                </address>
+            </div>
+            <form action="www.baidu.com" method="get">
+                <div class="col-md-4 w3l-contact-form">
+                    <div class="w3l-contact-form-row">
+                        <div>
+                            <span>Name</span>
+                            <input type="text" name="guestName" class="text" placeholder="" required="required"/>
+                        </div>
+                        <div>
+                            <span>Email</span>
+                            <input type="email" name="guestEmail" class="text" placeholder="" required="required" pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"/>
+                        </div>
+                        <div>
+                            <span>phone</span>
+                            <input type="text" name="guestPhone" class="text" placeholder="" required="required" />pattern="/^1[3456789]\d{9}$/"
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div class="col-md-4 w3l-contact-form-row comments">
+                    <div>
+                        <span>Comments</span>
+                        <textarea name="guestText"></textarea>
+                    </div>
+                    <input type="submit" value="Submit"/>
+                </div>
+                <!--<div class="clearfix"></div>-->
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="w3ls-icons">
+            <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" title="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            <a href="#" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        </div>
+        <div class="copyright">
+            <p>Copyright &copy; 2020.康梓健个人博客-- <a href="https://github.com/kzj666" target="_blank" title="GitHub"> GitHub</a></p>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</footer>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        /*
+            var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+            };
+        */
+
+        $().UItoTop({easingType: 'easeOutQuart'});
+
+    });
+</script>
+<script type="text/javascript" th:src="@{/blog/js/move-top.js}"></script>
+<script type="text/javascript" th:src="@{/blog/js/easing.js}"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
+        });
+    });
+</script>
+</body>
+</html>
