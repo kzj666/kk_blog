@@ -720,7 +720,7 @@ span.w3-line {
 
 /*-- news --*/
 .info{
-	    background: #ff4c4c;
+	    background: rgba(0, 242, 11, 0.26);
     padding: 20px 20px;
 }
 .w3ls-news-section-grid img{

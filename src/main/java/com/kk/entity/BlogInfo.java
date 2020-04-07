@@ -116,4 +116,17 @@ public class BlogInfo implements Serializable {
         this.isDeleted = isDeleted;
     }
 
+    @Override
+    public String toString() {
+        return "BlogInfo{" +
+                "blogId=" + blogId +
+                ", blogTitle='" + blogTitle + '\'' +
+                ", blogContent='" + blogContent + '\'' +
+                ", blogTags='" + blogTags + '\'' +
+                ", gmtCreate=" + gmtCreate +
+                ", gmtUpdate=" + gmtUpdate +
+                ", version=" + version +
+                ", isDeleted=" + isDeleted +
+                '}';
+    }
 }

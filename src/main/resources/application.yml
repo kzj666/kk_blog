@@ -73,5 +73,10 @@ spring:
     multipart:
       max-file-size: 5MB  #设置上传文件最大大小
 
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
 logging:
   level.com.site.blog: debug

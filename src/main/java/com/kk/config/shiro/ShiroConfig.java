@@ -8,6 +8,7 @@ package com.kk.config.shiro;
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
+import org.apache.shiro.web.filter.authc.LogoutFilter;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,6 +16,7 @@ import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreato
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 @Configuration
@@ -45,20 +47,16 @@ public class ShiroConfig {
         filtermap.put("/admin/**", "anon");
         filtermap.put("/blog/**", "anon");
         filtermap.put("/editormd/**", "anon");
+        filtermap.put("/", "anon");
 
-        //编辑页面
-//        filtermap.put("/blog/edit", "anon");
-        //提交文章
-//        filtermap.put("/blog/addBlog", "anon");
-
-//        filtermap.put("/blog/index", "anon");
         filtermap.put("/blog/*", "anon");
-//        filtermap.put("/index.html", "anon");
         filtermap.put("/admin/login", "anon");
         filtermap.put("/admin/login.html", "anon");
 
         // 配置退出过滤器,其中的具体的退出代码Shiro已经替我们实现了
         filtermap.put("/logout", "logout");
+
+
 
         //拦截所有请求，一般放最后面
         filtermap.put("/**", "authc");

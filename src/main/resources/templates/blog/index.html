@@ -82,7 +82,7 @@
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/n1.jpg}" alt=""/>
                 <div class="info">
-                    <h5>News post title1</h5>
+                    <h5 th:text="${blog1.blogTitle}"></h5>
                     <label>september 12</label>
                     <p>Lorem</p>
                     <a class="more" href="#" data-toggle="modal" data-target="#myModal">Read more</a>
@@ -105,7 +105,7 @@
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/n2.jpg}" alt=""/>
                 <div class="info">
-                    <h5>News post title2</h5>
+                    <h5 th:text="${blog2.blogTitle}"></h5>
                     <label>October 25</label>
                     <p>Lorem </p>
                     <a class="more" href="#" data-toggle="modal" data-target="#myModal1">Read more</a>
@@ -128,7 +128,76 @@
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/n3.jpg}" alt=""/>
                 <div class="info">
-                    <h5>News post title3</h5>
+                    <h5 th:text="${blog3.blogTitle}"></h5>
+                    <label>october 30</label>
+                    <p>Lorem</p>
+                    <a class="more" href="#" data-toggle="modal" data-target="#myModal2">Read more</a>
+                    <div class="modal fade" id="myModal2" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        News post title3</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w3ls-news-section-grid">
+                <img th:src="@{/blog/images/g1.jpg}" alt=""/>
+                <div class="info">
+                    <h5 th:text="${blog4.blogTitle}"></h5>
+                    <label>september 12</label>
+                    <p>Lorem</p>
+                    <a class="more" href="#" data-toggle="modal" data-target="#myModal">Read more</a>
+                    <div class="modal fade" id="myModal" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        News post title1</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w3ls-news-section-grid">
+                <img th:src="@{/blog/images/g2.jpg}" alt=""/>
+                <div class="info">
+                    <h5 th:text="${blog5.blogTitle}"></h5>
+                    <label>October 25</label>
+                    <p>Lorem </p>
+                    <a class="more" href="#" data-toggle="modal" data-target="#myModal1">Read more</a>
+                    <div class="modal fade" id="myModal1" role="dialog">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">
+                                        News post title2</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Lorem </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 w3ls-news-section-grid">
+                <img th:src="@{/blog/images/g9.jpg}" alt=""/>
+                <div class="info">
+                    <h5 th:text="${blog6.blogTitle}"></h5>
                     <label>october 30</label>
                     <p>Lorem</p>
                     <a class="more" href="#" data-toggle="modal" data-target="#myModal2">Read more</a>
@@ -152,178 +221,6 @@
         </div>
     </div>
 </div>
-
-
-<div class="gallery text-center" id="wthree-gallery" style="background: #ffffff">
-    <div class="container">
-        <h3 class="agileits_head" style="color: #272727">Gallery</h3>
-        <span class="w3-line"></span>
-        <div class="w3l_gallery_grids">
-            <div class="bs-example bs-example-tabs wthree_example_tab" role="tabpanel" data-example-id="togglable-tabs">
-                <div class="w3l_gallery_grids1">
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g1.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g1.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g2.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g2.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g3.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g3.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g4.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g4.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g5.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g5.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g6.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g6.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g7.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g7.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g8.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g8.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 w3l_gallery_grid">
-                        <div class="agileinfo_gallery_grid">
-                            <a class="group1" th:href="@{/blog/images/g9.jpg}" title="Road trip">
-                                <div class="hovereffect">
-                                    <img th:src="@{/blog/images/g9.jpg}" alt=" " class="img-responsive"/>
-                                    <div class="overlay">
-                                        <p class="info">Road trip</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script th:src="@{/blog/js/jquery.colorbox.js}"></script>
-<script>
-    $(document).ready(function () {
-        //Examples of how to assign the Colorbox event to elements
-        $(".group1").colorbox({rel: 'group1'});
-        $(".group2").colorbox({rel: 'group2', transition: "fade"});
-        $(".group3").colorbox({rel: 'group3', transition: "none", width: "75%", height: "75%"});
-        $(".group4").colorbox({rel: 'group4', slideshow: true});
-        $(".ajax").colorbox();
-        $(".youtube").colorbox({iframe: true, innerWidth: 640, innerHeight: 390});
-        $(".vimeo").colorbox({iframe: true, innerWidth: 500, innerHeight: 409});
-        $(".iframe").colorbox({iframe: true, width: "80%", height: "80%"});
-        $(".inline").colorbox({inline: true, width: "50%"});
-        $(".callbacks").colorbox({
-            onOpen: function () {
-                alert('onOpen: colorbox is about to open');
-            },
-            onLoad: function () {
-                alert('onLoad: colorbox has started to load the targeted content');
-            },
-            onComplete: function () {
-                alert('onComplete: colorbox has displayed the loaded content');
-            },
-            onCleanup: function () {
-                alert('onCleanup: colorbox has begun the close process');
-            },
-            onClosed: function () {
-                alert('onClosed: colorbox has completely closed');
-            }
-        });
-
-        $('.non-retina').colorbox({rel: 'group5', transition: 'none'})
-        $('.retina').colorbox({rel: 'group5', transition: 'none', retinaImage: true, retinaUrl: true});
-
-        //Example of preserving a JavaScript event for inline calls.
-        $("#click").click(function () {
-            $('#click').css({
-                "background-color": "#f00",
-                "color": "#fff",
-                "cursor": "inherit"
-            }).text("Open this window again and this message will still be here.");
-            return false;
-        });
-    });
-</script>
-
-
-
-
 
 <!-- about-section -->
 <div class="w3-agileits-about-section" id="w3-agile-about">
