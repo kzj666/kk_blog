@@ -44,10 +44,16 @@ public class ShiroConfig {
         // 放行静态资源
         filtermap.put("/admin/**", "anon");
         filtermap.put("/blog/**", "anon");
+        filtermap.put("/editormd/**", "anon");
 
-        filtermap.put("/index", "anon");
-        filtermap.put("/", "anon");
-        filtermap.put("/index.html", "anon");
+        //编辑页面
+//        filtermap.put("/blog/edit", "anon");
+        //提交文章
+//        filtermap.put("/blog/addBlog", "anon");
+
+//        filtermap.put("/blog/index", "anon");
+        filtermap.put("/blog/*", "anon");
+//        filtermap.put("/index.html", "anon");
         filtermap.put("/admin/login", "anon");
         filtermap.put("/admin/login.html", "anon");
 
