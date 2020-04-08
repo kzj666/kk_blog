@@ -26,23 +26,24 @@
     <!--//fonts-->
 
 
-
     <script th:src="@{/blog/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/blog/css/component.css}"/>
     <script th:src="@{/blog/js/modernizr.custom.js}"></script>
     <link rel="stylesheet" th:href="@{/blog/css/colorbox.css}"/>
 </head>
 <style>
-    .info{
+    .info {
         /*background: #ff4c4c;*/
         background: rgb(32, 161, 255);
     }
-    h4,h3,li{
-        color:#0090ff;
+
+    h4, h3, li {
+        color: #0090ff;
         font-weight: bolder;
         margin-bottom: 8px;
     }
-    .info >p,h4{
+
+    .info > p, h4 {
         color: #004101;
         text-align: center;
     }
@@ -55,7 +56,7 @@
         <div class="panel"><img th:src="@{/blog/images/4.jpg}" alt="Image 4"/></div>
     </div>
     <div class="w3layouts-header-title">
-        <h2>Never Say Giveup  , Like A Fighter</h2>
+        <h2>Never Say Giveup , Like A Fighter</h2>
     </div>
 </div>
 <script th:src="@{/blog/js/classie.js}"></script>
@@ -109,7 +110,7 @@
                 <div class="info">
                     <h4 th:text="${blog2.blogTitle}"></h4>
                     <p th:text="'最近修改时间：'+${#dates.format(blog2.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
-                    <p><a th:href="@{/blog/seeBlog/(id=${blog2.blogId})}" >Read more</a></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog2.blogId})}">Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
@@ -133,7 +134,7 @@
                 <div class="info">
                     <h4 th:text="${blog5.blogTitle}"></h4>
                     <p th:text="'最近修改时间：'+${#dates.format(blog5.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
-                    <p><a th:href="@{/blog/seeBlog/(id=${blog5.blogId})}" >Read more</a></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog5.blogId})}">Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
@@ -157,12 +158,13 @@
             <span></span>
         </div>
         <div class="about-section-grids">
-            <div class="col-md-4 wthree-about-section-grid"  style="padding: 0px">
+            <div class="col-md-4 wthree-about-section-grid" style="padding: 0px">
                 <img th:src="@{/blog/images/abt_pic.jpg}" alt=""/>
             </div>
             <div class="col-md-6 wthree-about-section-grid" style="padding-top: 25px;padding-left: 25px;">
                 <h3 style="font-weight: normal">博客介绍</h3>
-                <p> 本项目是基于SpringBoot2.2.6，集成MyBatisPlus实现OOM，采用Shiro实现认证，Thymeleaf模板引擎，后台采用Layui模板，整合了MarkDown编辑器的个人博客项目，作为个人博文的编写和在线查看网站</p>
+                <p>
+                    本项目是基于SpringBoot2.2.6，集成MyBatisPlus实现OOM，采用Shiro实现认证，Thymeleaf模板引擎，后台采用Layui模板，整合了MarkDown编辑器的个人博客项目，作为个人博文的编写和在线查看网站</p>
             </div>
             <div class="col-md-2 wthree-about-section-grid" style="padding-top: 25px">
                 <h3 style="font-weight: normal">技术栈</h3>
@@ -195,20 +197,24 @@
             </div>
 
             <!---->
-            <form  action="/comments/add" method="POST">
+            <form action="/comments/add" method="POST">
                 <div class="col-md-4 w3l-contact-form">
                     <div class="w3l-contact-form-row">
                         <div>
                             <span>Name</span>
-                            <input autocomplete="off" type="text" name="name" class="text" placeholder="" required="required"/>
+                            <input autocomplete="off" type="text" name="name" class="text" placeholder=""
+                                   required="required"/>
                         </div>
                         <div>
                             <span>Email</span>
-                            <input autocomplete="off" type="email" name="email" class="text" placeholder="" required="required" pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"/>
+                            <input autocomplete="off" type="email" name="email" class="text" placeholder=""
+                                   required="required"
+                                   pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"/>
                         </div>
                         <div>
                             <span>phone</span>
-                            <input autocomplete="off" type="text" name="phone" class="text" placeholder="" required="required" pattern="/^1([38]\d|5[0-35-9]|7[3678])\d{8}$/"
+                            <input autocomplete="off" type="text" name="phone" class="text" placeholder=""
+                                   required="required" pattern="/^1([38]\d|5[0-35-9]|7[3678])\d{8}$/" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -220,6 +226,7 @@
                     </div>
                     <input type="submit" value="Submit"/>
                 </div>
+                <div class="clearfix"></div>
             </form>
         </div>
     </div>
@@ -228,12 +235,16 @@
 <footer>
     <div class="container">
         <div class="w3ls-icons">
-            <a href="https://github.com/kzj666" title="github" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-            <a href="https://home.firefoxchina.cn/" title="firefox" target="_blank"><i class="fa fa-firefox" aria-hidden="true"></i></a>
-            <a href="https://blog.csdn.net/K_kzj_K" title="CSDN" target="_blank"><i class="fa fa-plane" aria-hidden="true"></i></a>
+            <a href="https://github.com/kzj666" title="github" target="_blank"><i class="fa fa-github"
+                                                                                  aria-hidden="true"></i></a>
+            <a href="https://home.firefoxchina.cn/" title="firefox" target="_blank"><i class="fa fa-firefox"
+                                                                                       aria-hidden="true"></i></a>
+            <a href="https://blog.csdn.net/K_kzj_K" title="CSDN" target="_blank"><i class="fa fa-plane"
+                                                                                    aria-hidden="true"></i></a>
         </div>
         <div class="copyright">
-            <p>Copyright &copy; 2020.康梓健个人博客-- <a href="https://github.com/kzj666" target="_blank" title="GitHub"> GitHub</a></p>
+            <p>Copyright &copy; 2020.康梓健个人博客-- <a href="https://github.com/kzj666" target="_blank" title="GitHub">
+                GitHub</a></p>
         </div>
         <div class="clearfix"></div>
     </div>
