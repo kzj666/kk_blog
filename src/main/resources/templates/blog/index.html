@@ -16,18 +16,37 @@
     function hideURLbar() {
         window.scrollTo(0, 1);
     } </script>
+    <script type="text/javascript" th:src="@{/blog/js/jquery-2.1.4.min.js}"></script>
+    <script th:src="@{/blog/js/bootstrap.min.js}"></script>
     <!--fonts-->
     <link href="http://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext"
           rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese"
           rel="stylesheet">
     <!--//fonts-->
-    <script type="text/javascript" th:src="@{/blog/js/jquery-2.1.4.min.js}"></script>
+
+
+
     <script th:src="@{/blog/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" type="text/css" th:href="@{/blog/css/component.css}"/>
     <script th:src="@{/blog/js/modernizr.custom.js}"></script>
     <link rel="stylesheet" th:href="@{/blog/css/colorbox.css}"/>
 </head>
+<style>
+    .info{
+        /*background: #ff4c4c;*/
+        background: rgb(32, 161, 255);
+    }
+    h4,h3,li{
+        color:#0090ff;
+        font-weight: bolder;
+        margin-bottom: 8px;
+    }
+    .info >p,h4{
+        color: #004101;
+        text-align: center;
+    }
+</style>
 <body>
 <div class="w3-slider">
     <div id="boxgallery" class="boxgallery" data-effect="effect-1">
@@ -36,7 +55,7 @@
         <div class="panel"><img th:src="@{/blog/images/4.jpg}" alt="Image 4"/></div>
     </div>
     <div class="w3layouts-header-title">
-        <h2>Never Say Giveup  , Like a fighter</h2>
+        <h2>Never Say Giveup  , Like A Fighter</h2>
     </div>
 </div>
 <script th:src="@{/blog/js/classie.js}"></script>
@@ -56,14 +75,13 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a class="active" href="index.html">主页</a></li>
+                    <li><a class="active" href="/blog">主页</a></li>
                     <li><a class="scroll" href="#agileinfo-news">最新文章</a></li>
-                    <li><a class="scroll" href="#wthree-gallery">待定</a></li>
                     <li><a href="/admin/index">文章管理</a></li>
                     <li><a href="/blog/edit">写博文</a></li>
                     <li><a class="scroll" href="#w3-agile-about">关于我</a></li>
                     <li><a class="scroll" href="#w3-contact">留 言</a></li>
-                    <li><a href="https://github.com/kzj666" target="_blank">开发文档</a></li>
+                    <li><a href="https://github.com/kzj666/kk_blog" target="_blank">开发文档</a></li>
                 </ul>
             </div>
         </nav>
@@ -71,150 +89,59 @@
     </div>
 </header>
 
-
 <div class="news-section" id="agileinfo-news">
     <div class="container">
         <div class="agileits-news-section-head text-center">
-            <h3 class="agileits_head">Latest Articles</h3>
+            <h3>Latest Articles</h3>
             <span class="w3-line"></span>
         </div>
         <div class="news-section-grids">
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/n1.jpg}" alt=""/>
                 <div class="info">
-                    <h5 th:text="${blog1.blogTitle}"></h5>
-                    <label>september 12</label>
-                    <p>Lorem</p>
-                    <a class="more" href="#" data-toggle="modal" data-target="#myModal">Read more</a>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">
-                                        News post title1</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lorem </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 th:text="${blog1.blogTitle}"></h4>
+                    <p th:text="'最近修改时间：'+${#dates.format(blog1.gmtUpdate,'yyyy-MM-dd HH:mm:ss')}"></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog1.blogId})}">Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/n2.jpg}" alt=""/>
                 <div class="info">
-                    <h5 th:text="${blog2.blogTitle}"></h5>
-                    <label>October 25</label>
-                    <p>Lorem </p>
-                    <a class="more" href="#" data-toggle="modal" data-target="#myModal1">Read more</a>
-                    <div class="modal fade" id="myModal1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">
-                                        News post title2</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lorem </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 th:text="${blog2.blogTitle}"></h4>
+                    <p th:text="'最近修改时间：'+${#dates.format(blog2.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog2.blogId})}" >Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/n3.jpg}" alt=""/>
                 <div class="info">
-                    <h5 th:text="${blog3.blogTitle}"></h5>
-                    <label>october 30</label>
-                    <p>Lorem</p>
-                    <a class="more" href="#" data-toggle="modal" data-target="#myModal2">Read more</a>
-                    <div class="modal fade" id="myModal2" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">
-                                        News post title3</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lorem</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 th:text="${blog3.blogTitle}"></h4>
+                    <p th:text="'最近修改时间：'+${#dates.format(blog3.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog3.blogId})}">Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/g1.jpg}" alt=""/>
                 <div class="info">
-                    <h5 th:text="${blog4.blogTitle}"></h5>
-                    <label>september 12</label>
-                    <p>Lorem</p>
-                    <a class="more" href="#" data-toggle="modal" data-target="#myModal">Read more</a>
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">
-                                        News post title1</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lorem </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 th:text="${blog4.blogTitle}"></h4>
+                    <p th:text="'最近修改时间：'+${#dates.format(blog4.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog4.blogId})}">Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/g2.jpg}" alt=""/>
                 <div class="info">
-                    <h5 th:text="${blog5.blogTitle}"></h5>
-                    <label>October 25</label>
-                    <p>Lorem </p>
-                    <a class="more" href="#" data-toggle="modal" data-target="#myModal1">Read more</a>
-                    <div class="modal fade" id="myModal1" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">
-                                        News post title2</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lorem </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 th:text="${blog5.blogTitle}"></h4>
+                    <p th:text="'最近修改时间：'+${#dates.format(blog5.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog5.blogId})}" >Read more</a></p>
                 </div>
             </div>
             <div class="col-md-4 w3ls-news-section-grid">
                 <img th:src="@{/blog/images/g9.jpg}" alt=""/>
                 <div class="info">
-                    <h5 th:text="${blog6.blogTitle}"></h5>
-                    <label>october 30</label>
-                    <p>Lorem</p>
-                    <a class="more" href="#" data-toggle="modal" data-target="#myModal2">Read more</a>
-                    <div class="modal fade" id="myModal2" role="dialog">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                    <h4 class="modal-title">
-                                        News post title3</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Lorem</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 th:text="${blog6.blogTitle}"></h4>
+                    <p th:text="'最近修改时间：'+${#dates.format(blog6.gmtUpdate,'yyyy-MM-dd HH:mm')}"></p>
+                    <p><a th:href="@{/blog/seeBlog/(id=${blog6.blogId})}">Read more</a></p>
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -230,18 +157,19 @@
             <span></span>
         </div>
         <div class="about-section-grids">
-            <div class="col-md-4 wthree-about-section-grid">
+            <div class="col-md-4 wthree-about-section-grid"  style="padding: 0px">
                 <img th:src="@{/blog/images/abt_pic.jpg}" alt=""/>
             </div>
-            <div class="col-md-4 wthree-about-section-grid">
-                <h5>博客介绍</h5>
-                <p>11111111111</p>
-                <p>22222222222</p>
+            <div class="col-md-6 wthree-about-section-grid" style="padding-top: 25px;padding-left: 25px;">
+                <h3 style="font-weight: normal">博客介绍</h3>
+                <p> 本项目是基于SpringBoot2.2.6，集成MyBatisPlus实现OOM，采用Shiro实现认证，Thymeleaf模板引擎，后台采用Layui模板，整合了MarkDown编辑器的个人博客项目，作为个人博文的编写和在线查看网站</p>
             </div>
-            <div class="col-md-4 wthree-about-section-grid">
-                <h5>技术栈</h5>
+            <div class="col-md-2 wthree-about-section-grid" style="padding-top: 25px">
+                <h3 style="font-weight: normal">技术栈</h3>
                 <p>Springboot</p>
                 <p>MyBatisPlus</p>
+                <p>Shiro</p>
+                <p>thymeleaf</p>
                 <p>Layui</p>
             </div>
             <div class="clearfix"></div>
@@ -256,34 +184,31 @@
             <h3>Contact Me</h3>
             <span></span>
         </div>
-        <!--<div class="agileits-map">-->
-            <!--<iframe src="" allowfullscreen></iframe>-->
-        <!--</div>-->
         <div class="w3l-contact-form-bottom">
             <div class="col-md-4 w3ls-address">
                 <address>
                     <strong>Address :</strong>
-                    <p>Kzj Company</p>
-                    <p>天河区</p>
                     <p class="bottom">GuangZhou,CHINA</p>
                     <strong>Email :</strong>
                     <p>2319680237@qq.com</p>
                 </address>
             </div>
-            <form action="www.baidu.com" method="get">
+
+            <!---->
+            <form  action="/comments/add" method="POST">
                 <div class="col-md-4 w3l-contact-form">
                     <div class="w3l-contact-form-row">
                         <div>
                             <span>Name</span>
-                            <input type="text" name="guestName" class="text" placeholder="" required="required"/>
+                            <input autocomplete="off" type="text" name="name" class="text" placeholder="" required="required"/>
                         </div>
                         <div>
                             <span>Email</span>
-                            <input type="email" name="guestEmail" class="text" placeholder="" required="required" pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"/>
+                            <input autocomplete="off" type="email" name="email" class="text" placeholder="" required="required" pattern="^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$"/>
                         </div>
                         <div>
                             <span>phone</span>
-                            <input type="text" name="guestPhone" class="text" placeholder="" required="required" />pattern="/^1[3456789]\d{9}$/"
+                            <input autocomplete="off" type="text" name="phone" class="text" placeholder="" required="required" pattern="/^1([38]\d|5[0-35-9]|7[3678])\d{8}$/"
                         </div>
                         <div class="clearfix"></div>
                     </div>
@@ -291,11 +216,10 @@
                 <div class="col-md-4 w3l-contact-form-row comments">
                     <div>
                         <span>Comments</span>
-                        <textarea name="guestText"></textarea>
+                        <textarea name="comment"></textarea>
                     </div>
                     <input type="submit" value="Submit"/>
                 </div>
-                <!--<div class="clearfix"></div>-->
             </form>
         </div>
     </div>
@@ -304,10 +228,9 @@
 <footer>
     <div class="container">
         <div class="w3ls-icons">
-            <a href="#" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a href="#" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a href="#" title="google-plus"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-            <a href="#" title="linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://github.com/kzj666" title="github" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+            <a href="https://home.firefoxchina.cn/" title="firefox" target="_blank"><i class="fa fa-firefox" aria-hidden="true"></i></a>
+            <a href="https://blog.csdn.net/K_kzj_K" title="CSDN" target="_blank"><i class="fa fa-plane" aria-hidden="true"></i></a>
         </div>
         <div class="copyright">
             <p>Copyright &copy; 2020.康梓健个人博客-- <a href="https://github.com/kzj666" target="_blank" title="GitHub"> GitHub</a></p>
@@ -318,17 +241,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-        */
-
         $().UItoTop({easingType: 'easeOutQuart'});
-
     });
 </script>
 <script type="text/javascript" th:src="@{/blog/js/move-top.js}"></script>

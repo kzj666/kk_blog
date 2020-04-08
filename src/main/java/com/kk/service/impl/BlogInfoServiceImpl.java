@@ -48,5 +48,10 @@ public class BlogInfoServiceImpl implements BlogInfoService {
         return page.getRecords();
     }
 
+    @Override
+    public BlogInfo seeBlog(int id) {
+        return blogInfoDao.selectById(id);
+    }
+
 
 }

@@ -5,13 +5,11 @@ package com.kk.controller;
 @date 2020/4/7 - 19:06
 */
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.kk.entity.BlogInfo;
 import com.kk.service.BlogInfoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import java.util.List;

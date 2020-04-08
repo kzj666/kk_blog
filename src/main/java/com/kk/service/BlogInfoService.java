@@ -21,4 +21,6 @@ public interface BlogInfoService {
 
     public List<BlogInfo> show();
 
+    BlogInfo seeBlog(int id);
+
 }

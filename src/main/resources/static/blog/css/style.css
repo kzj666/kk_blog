@@ -52,7 +52,7 @@ label{
     float: right;
 }
 .w3-logo a {
-    color: #ffffff;
+    color: #0090ff;
     font-size: 40px;
     text-decoration: none;
 }
@@ -90,7 +90,7 @@ header {
 .navbar-default .navbar-nav > li > a {
     font-size: 16px;
     color: #ff4c4c;
-    color: #34bf49;
+    color: #0090ff;
 }
 .tlinks{text-indent:-9999px;height:0;line-height:0;font-size:0;overflow:hidden;}
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -123,7 +123,7 @@ header {
 /*-- about --*/
 .w3-agileits-about-section{
 	padding: 70px 0;
-	background: #ffffff;
+	background: #c9c9c9;
 }
 .wthree-about-section-grid img{
 	width:100%;
@@ -135,15 +135,15 @@ header {
     margin-bottom: 20px;
 }
 .wthree-about-section-grid p {
-	color: #989898;
-    font-size: 12.5px;
+	color: #ff4c4c;
+    font-size: 19px;
     font-weight: 400;
     line-height: 30px;
     margin: 10px 0;
 }
 .w3agile-about-section-head h3{
 	text-align: center;
-    color: #001757;
+    color: #0090ff;
     font-size: 3.3em;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -166,7 +166,7 @@ header {
 }
 .agileits-w3layouts-specials h3{
     text-align: center;
-    color: #001757;
+    color: #0090ff;
     font-size: 3.3em;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -359,7 +359,7 @@ p.sp-para {
 /*-- team --*/
 .title h3 {
     text-align: center;
-    color: #001757;
+    color: #0090ff;
     font-size: 3.3em;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -576,7 +576,7 @@ span.w3-line {
 /*-- testimonial --*/
 .w3-testimonial-heading h3 {
 	text-align: center;
-    color: #001757;
+    color: #0090ff;
     font-size: 3.3em;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -732,10 +732,10 @@ img.readmore {
 }
 .news-section{
 	padding:70px 0;
-	background: #ffffff;
+	background: #c9c9c9;
 }
 .agileits-news-section-head h3{
-	color: #001757;
+	color: #0090ff;
 	font-size: 3.3em;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -772,13 +772,13 @@ img.readmore {
 .info p{
 	color: #000;
     font-weight: 400;
-    font-size: 12.5px;
+    font-size: 16px;
     line-height: 25px;
     margin-bottom: 20px;
 }
 .info a {
-	color: #fff;
-    font-size: 14px;
+	color: #ff3a00;
+    font-size: 22px;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -802,7 +802,7 @@ img.readmore {
 	padding: 70px 0;
 }
 .contact-section-head h3 {
-	color:#ffffff;
+	color:#0090ff;;
 	font-size:3.3em;
 	text-transform:uppercase;
 	letter-spacing:4px;
@@ -831,7 +831,7 @@ img.readmore {
     line-height: 25px;
 }
 .w3ls-address strong {
-	color: #ffffff;
+	color: #0090ff;
     font-weight: 600;
     font-size: 1.4em;
     display: block;
@@ -842,7 +842,7 @@ p.bottom{
 	margin-bottom:25px;
 }
 .w3l-contact-form-row span {
-	color: #ffffff;
+	color: #0090ff;
     font-weight: 600;
     font-size: 1.2em;
     display: block;
