@@ -54,7 +54,7 @@ public class BlogController {
         return "/admin/blogs";
     }
 
-    @GetMapping("/toSearchList/{title}")
+    @GetMapping("toSearchList/{title}")
     public String toSearchList(@PathVariable("title") String title, Model model, @RequestParam(value = "pn", defaultValue = "1") int pn, @RequestParam(value = "size", defaultValue = "10") int size){
         String tl = StringUtils.deleteWhitespace(title);
         System.out.println("-----------------------------------"+tl);
@@ -66,13 +66,12 @@ public class BlogController {
         return "/admin/blogs";
     }
 
-    @GetMapping("/seeBlog")
+    @GetMapping("seeBlog")
     public String seeBlog(@RequestParam("id") int id, Model model){
         BlogInfo article = blogInfoService.seeBlog(id);
         model.addAttribute("article", article);
         return "/blog/article";
     }
-
 
     /**
      * 处理图片上传

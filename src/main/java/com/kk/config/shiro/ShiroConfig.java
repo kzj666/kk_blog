@@ -50,7 +50,6 @@ public class ShiroConfig {
         filtermap.put("/", "anon");
         filtermap.put("/upload/**", "anon");
 
-        filtermap.put("/blog/**", "anon");
         filtermap.put("/comments/*", "anon");
         filtermap.put("/admin/login", "anon");
         filtermap.put("/admin/login.html", "anon");

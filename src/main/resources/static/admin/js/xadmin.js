@@ -100,6 +100,43 @@
 	       layer.full(index); 
 	    }
 	}
+
+	//-------------------------------------------------------自定义open2------------------------------------------------------------------------
+    Xadmin.prototype.open2 = function (title,url,w,h,obj,full) {
+	    var id = obj.getAttribute('value');
+        if (title == null || title == '') {
+            var title=false;
+        };
+        if (url == null || url == '') {
+            var url="404.html";
+        }else {
+            var url = url+id;
+        };
+        if (w == null || w == '') {
+            var w=($(window).width()*0.9);
+        };
+        if (h == null || h == '') {
+            var h=($(window).height() - 50);
+        };
+        var index = layer.open({
+            type: 2,
+            area: [w+'px', h +'px'],
+            fix: false, //不固定
+            maxmin: true,
+            shadeClose: true,
+            shade:0.4,
+            title: title,
+            content: url
+        });
+        if(full){
+            layer.full(index);
+        }
+    }
+	//-------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 	/**
 	 * [close 关闭弹出层]
 	 * @return {[type]} [description]

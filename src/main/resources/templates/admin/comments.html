@@ -32,18 +32,7 @@
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md12">
             <div class="layui-card">
-                <div class="layui-card-body ">
-                    <form class="layui-form layui-col-space5">
-                        <!--<div class="layui-inline layui-show-xs-block">-->
-                            <!--<input id="title" type="text" name="title" placeholder="请输入文章标题" autocomplete="off"-->
-                                   <!--class="layui-input">-->
-                        <!--</div>-->
-                        <!--<div class="layui-inline layui-show-xs-block">-->
-                            <!--<button class="layui-btn" onclick="titleSearch()"><i-->
-                                    <!--class="layui-icon">&#xe615;</i></button>-->
-                        <!--</div>-->
-                    </form>
-                </div>
+                <div class="layui-card-body "></div>
                 <div class="layui-card-header">
                     <button class="layui-btn">
                         <i class="layui-icon"></i><a th:href="@{/blog/edit}" target="_blank" style="color: white">添加博文</a>
@@ -54,23 +43,25 @@
                         <thead>
                         <tr>
                             <th width="5%">ID</th>
-                            <th width="20%">博文标题</th>
-                            <th width="15%">博文标签</th>
-                            <th width="25%">创建时间</th>
-                            <th width="25%">最近修改</th>
+                            <th width="10%">留言者</th>
+                            <th width="10%">联系方式</th>
+                            <th width="10%">邮箱</th>
+                            <th width="10%">留言时间</th>
+                            <th width="35%">评论内容</th>
                             <th width="10%">操作</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="blog:${page.getRecords()}">
-                            <td th:text="${blog.blogId}"></td>
-                            <td th:text="${blog.blogTitle}"></td>
-                            <td th:text="${blog.blogTags}"></td>
-                            <td th:text="${#dates.format(blog.gmtCreate,'yyyy-MM-dd HH:mm:ss')}"></td>
-                            <td th:text="${#dates.format(blog.gmtUpdate,'yyyy-MM-dd HH:mm:ss')}"></td>
+                        <tr th:each="comm:${page.getRecords()}">
+                            <td th:text="${comm.id}"></td>
+                            <td th:text="${comm.name}"></td>
+                            <td th:text="${comm.phone}"></td>
+                            <td th:text="${comm.email}"></td>
+                            <td th:text="${#dates.format(comm.gmtCreate,'yyyy-MM-dd HH:mm:ss')}"></td>
+                            <td th:text="${comm.comment}"></td>
                             <td class="td-manage">
-                                <span class="layui-btn layui-btn-normal layui-btn-mini" th:value="${blog.blogId}"><a style="text-decoration: none;color: white" th:href="@{/blog/seeBlog(id=${blog.blogId})}">查看</a></span>
-                                <span class="layui-btn layui-btn-normal layui-btn-mini" th:value="${blog.blogId}" onclick="member_del(this)">删除</span>
+                                <span class="layui-btn layui-btn-normal layui-btn-mini" th:value="${comm.id}" onclick="xadmin.open2('查看','/comments/see/',670,600,this)">查看</span>
+                                <span class="layui-btn layui-btn-normal layui-btn-mini" th:value="${comm.id}" onclick="member_del(this)">删除</span>
                             </td>
                         </tr>
                         </tbody>
@@ -79,11 +70,11 @@
                 <div class="layui-card-body ">
                     <div class="page">
                         <div>
-                            <a style="background: #ff951b; font-family: Arial; color: white;" class="prev" th:href="@{/blog/blogList?pn=1}">&lt;&lt;</a>
-                            <a style="background: #ff951b; font-family: Arial; color: white;" class="prev" th:href="@{/blog/blogList(pn=${page.getCurrent()-1})}" th:if="${page.getCurrent()>1}">&lt;</a>
+                            <a style="background: #ff951b; font-family: Arial; color: white;" class="prev" th:href="@{/comments/commsList(pn=1)}">&lt;&lt;</a>
+                            <a style="background: #ff951b; font-family: Arial; color: white;" class="prev" th:href="@{/comments/commsList(pn=${page.getCurrent()-1})}" th:if="${page.getCurrent()>1}">&lt;</a>
                             <a style="background: #ff951b; font-family: Arial; color: white;" class="num" disabled="disabled" th:text="${page.getCurrent()}"></a>
-                            <a style="background: #ff951b; font-family: Arial; color: white;" class="prev" th:href="@{/blog/blogList(pn=${page.getCurrent()+1})}" th:if="${page.getCurrent()<page.getPages()}">&gt;</a>
-                            <a style="background: #ff951b; font-family: Arial; color: white;" class="next" th:href="@{'/blog/blogList?pn='+${page.getPages()}}">&gt;&gt;</a>
+                            <a style="background: #ff951b; font-family: Arial; color: white;" class="prev" th:href="@{/comments/commsList(pn=${page.getCurrent()+1})}" th:if="${page.getCurrent()<page.getPages()}">&gt;</a>
+                            <a style="background: #ff951b; font-family: Arial; color: white;" class="next" th:href="@{/comments/commsList(pn=${page.getPages()})}">&gt;&gt;</a>
                         </div>
                     </div>
                 </div>
@@ -97,9 +88,32 @@
         var laydate = layui.laydate;
         var form = layui.form;
 
+
+        // 监听全选
+        form.on('checkbox(checkall)', function (data) {
+
+            if (data.elem.checked) {
+                $('tbody input').prop('checked', true);
+            } else {
+                $('tbody input').prop('checked', false);
+            }
+            form.render('checkbox');
+        });
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#start' //指定元素
+        });
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#end' //指定元素
+        });
+
+
     });
 
-    /*删除*/
+    /*评论-删除*/
     function member_del(obj) {
         var bloyId = obj.getAttribute('value');
         layer.confirm('确认要删除吗？', function (index) {
@@ -107,7 +121,7 @@
             $(obj).parents("tr").remove();
             $.ajax({
                 type: 'POST',
-                url: "/blog/blogDelete",
+                url: "/comments/commDelete",
                 data:{
                     id: bloyId,
                     _method: 'DELETE'
@@ -126,14 +140,6 @@
             window.location.href = "/blog/toSearchList/" + tl;
         }
     }
-    // function see(obj) {
-    //     var id = obj.getAttribute('value');
-    //     $.ajax({
-    //        type: "get",
-    //        url: "/blog/seeBlog",
-    //        data: {'id':id},
-    //     })
-    // }
 
 
 </script>
