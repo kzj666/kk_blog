@@ -32,7 +32,7 @@ public class BlogController {
 
     @GetMapping("edit")
     public String edit(){
-        return "/blog/edit";
+        return "blog/edit";
     }
 
     @PostMapping("addBlog")
@@ -45,13 +45,13 @@ public class BlogController {
     public String blogList(Model model, @RequestParam(value = "pn", defaultValue = "1") int pn, @RequestParam(value = "size", defaultValue = "10") int size){
         Page page = blogInfoService.blogList(pn, size, null);
         model.addAttribute("page", page);
-        return "/admin/blogs";
+        return "admin/blogs";
     }
 
     @DeleteMapping("blogDelete")
     public String blogdelete(@RequestParam("id") long id){
         blogInfoService.blogDelete(id);
-        return "/admin/blogs";
+        return "redirect:/blog/blogList";
     }
 
     @GetMapping("toSearchList/{title}")
@@ -61,16 +61,15 @@ public class BlogController {
         QueryWrapper<BlogInfo> wrapper = new QueryWrapper<>();
         wrapper.like("blog_title", tl);
         Page page = blogInfoService.blogList(pn, size,wrapper);
-        page.getRecords().forEach(System.out::println);
         model.addAttribute("page", page);
-        return "/admin/blogs";
+        return "admin/blogs";
     }
 
     @GetMapping("seeBlog")
     public String seeBlog(@RequestParam("id") int id, Model model){
         BlogInfo article = blogInfoService.seeBlog(id);
         model.addAttribute("article", article);
-        return "/blog/article";
+        return "blog/article";
     }
 
     /**
@@ -92,7 +91,7 @@ public class BlogController {
 
         //按照月份进行分类：
         Calendar instance = Calendar.getInstance();
-        String month = (instance.get(Calendar.MONTH) + 1) + "月";
+        String month = "m"+(instance.get(Calendar.MONTH) + 1) ;
         path = path + month;
 
         File realPath = new File(path);

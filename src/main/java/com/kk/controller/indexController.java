@@ -26,7 +26,7 @@ public class indexController {
         for (int i = 1; i <= blogs.size(); i++) {
             model.addAttribute("blog"+i, blogs.get(i-1));
         }
-        return "/blog/index";
+        return "blog/index";
     }
 
 }

@@ -28,7 +28,7 @@ public class AdminUserController {
 
     @GetMapping({"login", "login.html"})
     public String login(){
-        return "/admin/login";
+        return "admin/login";
     }
 
     @PostMapping("login")
@@ -44,31 +44,31 @@ public class AdminUserController {
             return "redirect:/admin/index";
         } catch (UnknownAccountException e) {
             model.addAttribute("msg", "用户名错误");
-            return "/admin/login";
+            return "admin/login";
         } catch (IncorrectCredentialsException e) {
             model.addAttribute("msg", "密码错误");
-            return "/admin/login";
+            return "admin/login";
         } catch (ExcessiveAttemptsException e) {
             model.addAttribute("msg", "登录失败次数过多");
-            return "/admin/login";
+            return "admin/login";
         } catch (LockedAccountException e) {
             model.addAttribute("msg", "帐号已被锁定");
-            return "/admin/login";
+            return "admin/login";
         } catch (DisabledAccountException e) {
             model.addAttribute("msg", "帐号已被禁用");
-            return "/admin/login";
+            return "admin/login";
         } catch (ExpiredCredentialsException e) {
             model.addAttribute("msg", "帐号已过期");
-            return "/admin/login";
+            return "admin/login";
         } catch (UnauthorizedException e) {
             model.addAttribute("msg", "您没有得到相应的授权！");
-            return "/admin/login";
+            return "admin/login";
         }
     }
 
     @GetMapping("index")
     public String index(){
-        return "/admin/index";
+        return "admin/index";
     }
 
 }
